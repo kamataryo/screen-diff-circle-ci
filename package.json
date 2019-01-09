@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "screenshot": "http-server -s & PS=$! && phantomjs ./bin/screenshot.js && kill $PS",
+    "screendiff": "bash ./bin/screendiff.sh",
+    "report-screendiff": "gulp report-screendiff"
+  },
+  "author": "kamataryo",
+  "license": "MIT"
+}

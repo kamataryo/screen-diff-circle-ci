@@ -1,0 +1,20 @@
+machine:
+  timezone: 'Asia/Tokyo'
+  environment:
+    BITBUCKET_REPO_SLUG: 'kamataryo/circle-ci-screen-diff'
+  node:
+    version: 11.4.0
+  post:
+    - curl -o- -L https://yarnpkg.com/install.sh | bash
+
+dependencies:
+  override:
+    - 'yarn'
+  cache_directories:
+    - '~/.cache/yarn'
+
+deployment:
+  development:
+    branch: master
+    commands:
+      - 'sh ./ci-deploy-development.sh'
